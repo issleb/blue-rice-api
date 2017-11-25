@@ -13,9 +13,9 @@ namespace BlueRice.Api.Common.Models
         public string Description { get; set; }
 
         public bool IsNew { get; set; }
-        public bool IsPublished { get; }
+        public bool IsPublished { get; set; }
 
-        public virtual IList<Tag> Tags { get; protected set; }
+        public virtual IList<Tag> Tags { get; set; }
 
         public Strip() { }
     }

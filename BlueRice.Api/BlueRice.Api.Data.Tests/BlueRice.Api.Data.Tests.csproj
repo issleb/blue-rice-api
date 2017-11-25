@@ -6,12 +6,16 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.Core" Version="3.3.19.1" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.14" />
     <PackageReference Include="CsvHelper" Version="2.16.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="Moq" Version="4.7.145" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BlueRice.Api.Common\BlueRice.Api.Common.csproj" />
+    <ProjectReference Include="..\BlueRice.Api.Data\BlueRice.Api.Data.csproj" />
   </ItemGroup>
 
 </Project>
