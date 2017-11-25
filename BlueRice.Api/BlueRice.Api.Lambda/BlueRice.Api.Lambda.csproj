@@ -42,4 +42,9 @@
     <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="1.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlueRice.Api.Common\BlueRice.Api.Common.csproj" />
+    <ProjectReference Include="..\BlueRice.Api.Core\BlueRice.Api.Core.csproj" />
+  </ItemGroup>
+
 </Project>
