@@ -12,7 +12,7 @@
     "framework"     : "netcoreapp1.0",
     "s3-prefix"     : "BlueRice.Api.Lambda/",
     "template"      : "serverless.template",
-    "template-parameters" : "\"ShouldCreateBucket\"=\"true\";\"BucketName\"=\"\"",
+    "template-parameters" : "\"ShouldCreateBucket\"=\"false\";\"BucketName\"=\"\"",
     "s3-bucket"           : "blue-rice-deploy",
     "stack-name"          : "blue-rice-api",
     "stack-wait"          : false

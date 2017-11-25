@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BlueRice.Api.Core.Logic;
+using BlueRice.Api.Core;
+using BlueRice.Api.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlueRice.Api.Lambda.Controllers {
@@ -11,8 +12,10 @@ namespace BlueRice.Api.Lambda.Controllers {
 
         // GET api/strips/1
         [HttpGet("{id}")]
-        public IActionResult Get(int id) {
-            var logic = new StripLogic();
+        public IActionResult Get(int id)
+        {
+            var data = new StripData();
+            var logic = new StripLogic(data);
             var strip = logic.GetStrip(id);
 
             return Ok(strip);

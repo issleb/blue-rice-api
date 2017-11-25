@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlueRice.Api.Common\BlueRice.Api.Common.csproj" />
-    <ProjectReference Include="..\BlueRice.Api.Data\BlueRice.Api.Data.csproj" />
   </ItemGroup>
 
 </Project>
