@@ -43,6 +43,10 @@ namespace BlueRice.Api.Lambda
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddLambdaLogger(Configuration.GetLambdaLoggerOptions());
+
+            app.UseCors(builder =>
+                builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+
             app.UseMvc();
         }
     }
