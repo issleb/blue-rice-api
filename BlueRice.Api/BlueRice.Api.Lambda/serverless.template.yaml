@@ -1,0 +1,51 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Application that uses the ASP.NET Core framework running in Amazon Lambda.
+Resources:
+  Get:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: BlueRice.Api.Lambda::BlueRice.Api.Lambda.LambdaEntryPoint::FunctionHandlerAsync
+      Runtime: dotnetcore1.0
+      CodeUri: ''
+      MemorySize: 256
+      Timeout: 30
+      Role: 
+      Policies:
+      - AWSLambdaFullAccess
+      Environment:
+        Variables: {}
+      Events:
+        PutResource:
+          Type: Api
+          Properties:
+            Path: "/{proxy+}"
+            Method: ANY
+  DevApiDomain:
+    Type: AWS::ApiGateway::DomainName
+    Properties:
+      DomainName: devapi.bluericecomic.com
+      CertificateArn: arn:aws:acm:us-east-1:079820913299:certificate/2aaaa951-0332-4ecd-9775-77c9e770010f
+  DevApiMapping:
+    Type: AWS::ApiGateway::BasePathMapping
+    Properties:
+      DomainName:
+        Ref: DevApiDomain
+      RestApiId:
+        Ref: ServerlessRestApi
+      Stage: Stage
+  ProdApiDomain:
+    Type: AWS::ApiGateway::DomainName
+    Properties:
+      DomainName: api.bluericecomic.com
+      CertificateArn: arn:aws:acm:us-east-1:079820913299:certificate/2aaaa951-0332-4ecd-9775-77c9e770010f
+  ProdApiMapping:
+    Type: AWS::ApiGateway::BasePathMapping
+    Properties:
+      DomainName:
+        Ref: ProdApiDomain
+      RestApiId:
+        Ref: ServerlessRestApi
+      Stage: Prod
+
