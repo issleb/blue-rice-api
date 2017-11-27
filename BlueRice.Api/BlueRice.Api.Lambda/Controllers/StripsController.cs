@@ -18,7 +18,7 @@ namespace BlueRice.Api.Lambda.Controllers {
             var logic = new StripLogic(data);
             var strip = logic.GetStrip(id);
 
-            return Ok(strip);
+            return Ok( new { strips = strip });
         }
     }
 }
